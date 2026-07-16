@@ -1,0 +1,51 @@
+function onOpen() {
+  const ui = SpreadsheetApp.getUi();
+  ui.createMenu('🛠️ 通訊錄小工具')
+      .addItem('產生 data.js 程式碼', 'generateJSCode')
+      .addToUi();
+}
+
+function generateJSCode() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  // 取得從第2列開始，到最後一列的資料 (A 到 F 欄)
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) return; // 如果沒有資料就停止
+  
+  const dataRange = sheet.getRange(2, 1, lastRow - 1, 6); // 抓取 6 欄資料 (A~F)
+  const data = dataRange.getDisplayValues();
+  
+  let jsOutput = "const studentsData = [\n";
+  
+  data.forEach(row => {
+    // 陣列索引從 0 開始：C(姓名)是 row[2], D(學生手機)是 row[3], E(家長)是 row[4], F(家長手機)是 row[5]
+    const name = row[2] ? row[2].trim() : "";
+    const studentMobile = row[3] ? row[3].trim() : "";
+    const parent = row[4] ? row[4].trim() : "";
+    const parentMobile = row[5] ? row[5].trim() : "";
+    
+    // 如果姓名是空的，就跳過這行
+    if (!name) return;
+    
+    jsOutput += `    {"name": "${name}", "studentMobile": "${studentMobile}", "parent": "${parent}", "parentMobile": "${parentMobile}"},\n`;
+  });
+  
+  // 移除最後一行的逗號並補上結尾
+  jsOutput = jsOutput.replace(/,\n$/, "\n");
+  jsOutput += "];";
+  
+  // 顯示對話框讓使用者複製
+  showDialog(jsOutput);
+}
+
+function showDialog(content) {
+  const htmlOutput = HtmlService.createHtmlOutput(`
+    <div style="font-family: sans-serif; padding: 10px;">
+      <p>請複製下方所有的程式碼，並貼到您的 <b>data.js</b> 檔案中：</p>
+      <textarea style="width: 100%; height: 250px; font-family: monospace; font-size: 12px;" readonly>${content}</textarea>
+    </div>
+  `)
+  .setWidth(600)
+  .setHeight(350);
+  
+  SpreadsheetApp.getUi().showModalDialog(htmlOutput, '成功產生 data.js');
+}
