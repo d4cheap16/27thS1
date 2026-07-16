@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>知足通訊錄</title>
-    <!-- 修改為包含完整網址的絕對路徑 -->
+    
+    <!-- 確保手機加入主畫面時能正確讀取圖示的絕對路徑 -->
     <link rel="apple-touch-icon" href="https://d4cheap16.github.io/27thS1/paws.png">
     <link rel="icon" href="https://d4cheap16.github.io/27thS1/paws.png" type="image/x-icon">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -66,12 +68,14 @@
         // 頁面載入後，將 data.js 裡的資料塞入下拉式選單
         document.addEventListener('DOMContentLoaded', () => {
             // 使用陣列的 index 作為 value，避免同名學生的問題
-            studentsData.forEach((student, index) => {
-                const option = document.createElement('option');
-                option.value = index; 
-                option.textContent = student.name;
-                studentSelect.appendChild(option);
-            });
+            if (typeof studentsData !== 'undefined') {
+                studentsData.forEach((student, index) => {
+                    const option = document.createElement('option');
+                    option.value = index; 
+                    option.textContent = student.name;
+                    studentSelect.appendChild(option);
+                });
+            }
         });
 
         // 監聽下拉選單變更
@@ -91,8 +95,8 @@
         });
 
         function renderCard(student) {
-            const studentMobile = student.studentMobile.trim();
-            const parentMobile = student.parentMobile.trim();
+            const studentMobile = (student.studentMobile || "").trim();
+            const parentMobile = (student.parentMobile || "").trim();
             
             // 處理學生手機按鈕
             let studentButtonHtml = '';
@@ -125,6 +129,8 @@
                 <div class="bg-white rounded-2xl p-6 shadow-md border border-orange-50 mt-2 animate-fade-in">
                     <div class="mb-5 border-b border-orange-100 pb-4 text-center">
                         <h2 class="text-3xl font-bold text-gray-800 tracking-wide">${student.name}</h2>
+                        <!-- 串接英文姓名：如果有資料才顯示，大小設定與中文相同(text-3xl)，顏色略淺(gray-600)區隔 -->
+                        ${student.englishName ? `<h3 class="text-3xl font-medium text-gray-600 mt-2 tracking-wide">${student.englishName}</h3>` : ''}
                     </div>
                     
                     <!-- 學生本人區塊 -->
