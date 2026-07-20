@@ -1,12 +1,12 @@
 const studentsData = [
-    {"name": "王品升", "englishName": "", "studentMobile": "", "parent": "王新凱", "parentMobile": "0912832433", "parent2": "", "parentMobile2": ""},
+    {"name": "王品升", "englishName": "", "studentMobile": "", "parent": "王新凱", "parentMobile": "0912832433", "parent2": "王靜錦(Demi)", "parentMobile2": ""},
     {"name": "徐弘禮", "englishName": "", "studentMobile": "", "parent": "徐振家", "parentMobile": "0976241391", "parent2": "", "parentMobile2": ""},
     {"name": "陳昱聖", "englishName": "", "studentMobile": "", "parent": "詹雯智", "parentMobile": "0921419288", "parent2": "", "parentMobile2": ""},
     {"name": "葉品杰", "englishName": "", "studentMobile": "", "parent": "葉育哲", "parentMobile": "0916724631", "parent2": "", "parentMobile2": ""},
     {"name": "葛修諒", "englishName": "", "studentMobile": "", "parent": "董逸秋", "parentMobile": "0928691226", "parent2": "", "parentMobile2": ""},
     {"name": "劉振梧", "englishName": "", "studentMobile": "", "parent": "陳柏均", "parentMobile": "0965404919", "parent2": "", "parentMobile2": ""},
     {"name": "戴名澤", "englishName": "", "studentMobile": "", "parent": "戴奎浚", "parentMobile": "0917077883", "parent2": "", "parentMobile2": ""},
-    {"name": "龐　安", "englishName": "", "studentMobile": "", "parent": "龐？醛", "parentMobile": "0975533702", "parent2": "", "parentMobile2": ""},
+    {"name": "龐　安", "englishName": "", "studentMobile": "", "parent": "龐渂醛", "parentMobile": "0975533702", "parent2": "", "parentMobile2": ""},
     {"name": "陳昱安", "englishName": "", "studentMobile": "", "parent": "鄧佳蕙", "parentMobile": "0928547056", "parent2": "", "parentMobile2": ""},
     {"name": "王伊平", "englishName": "", "studentMobile": "", "parent": "葉家諭", "parentMobile": "0919735765", "parent2": "", "parentMobile2": ""},
     {"name": "王品媗", "englishName": "", "studentMobile": "", "parent": "王榮宏", "parentMobile": "0912680180", "parent2": "", "parentMobile2": ""},
@@ -24,7 +24,7 @@ const studentsData = [
     {"name": "徐霈蓉", "englishName": "", "studentMobile": "", "parent": "林淑惠", "parentMobile": "0932651590", "parent2": "", "parentMobile2": ""},
     {"name": "張詠寧", "englishName": "", "studentMobile": "", "parent": "林逸薇", "parentMobile": "0919288672", "parent2": "", "parentMobile2": ""},
     {"name": "郭悅菱", "englishName": "", "studentMobile": "", "parent": "吳鈞傑", "parentMobile": "0912091969", "parent2": "郭健惠", "parentMobile2": "0932650697"},
-    {"name": "陳品希", "englishName": "", "studentMobile": "", "parent": "陳慶玲", "parentMobile": "0920906990", "parent2": "", "parentMobile2": ""},
+    {"name": "陳品希", "englishName": "", "studentMobile": "", "parent": "陳慶玲(姑)", "parentMobile": "0920906990", "parent2": "陳四川", "parentMobile2": ""},
     {"name": "陳雯潁", "englishName": "", "studentMobile": "", "parent": "王麗婷", "parentMobile": "0913522163", "parent2": "", "parentMobile2": ""},
     {"name": "陳樂芙", "englishName": "", "studentMobile": "", "parent": "蔡家怡", "parentMobile": "0958296689", "parent2": "", "parentMobile2": ""},
     {"name": "黃妍茗", "englishName": "", "studentMobile": "", "parent": "黃啟達", "parentMobile": "0913332166", "parent2": "", "parentMobile2": ""},
@@ -34,7 +34,7 @@ const studentsData = [
     {"name": "趙彩緹", "englishName": "", "studentMobile": "", "parent": "趙家驊", "parentMobile": "0921628671", "parent2": "劉堉縈", "parentMobile2": "0976005456"},
     {"name": "歐育秝", "englishName": "", "studentMobile": "", "parent": "李沐瑤", "parentMobile": "0952532293", "parent2": "歐光興", "parentMobile2": "0919607773"},
     {"name": "鄭子晴", "englishName": "", "studentMobile": "", "parent": "鄭懷寶", "parentMobile": "0988373208", "parent2": "", "parentMobile2": ""},
-    {"name": "鍾沛容", "englishName": "", "studentMobile": "", "parent": "鍾品正", "parentMobile": "0921273988", "parent2": "", "parentMobile2": ""},
+    {"name": "鍾沛容", "englishName": "", "studentMobile": "", "parent": "鍾品正", "parentMobile": "0921273988", "parent2": "王婷宇", "parentMobile2": "0972159798"},
     {"name": "簡耘可", "englishName": "", "studentMobile": "", "parent": "陳屏儒", "parentMobile": "0955997925", "parent2": "", "parentMobile2": ""},
     {"name": "蘇愛理", "englishName": "", "studentMobile": "", "parent": "蘇裕翔", "parentMobile": "0928298704", "parent2": "", "parentMobile2": ""}
 ];
